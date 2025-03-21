@@ -44,8 +44,12 @@ int main()
 	LogSingleton& rcTheSingletion = LogSingleton::Instance("data/log.txt");
 
 
+	functionToUseSingleton();
+
 	rcTheSingletion.write("FRIDAY\n");
 	rcTheSingletion.write("SpringBreak\n");
-
+	
+	functionToUseSingleton();
+	
 	return EXIT_SUCCESS;
 }
