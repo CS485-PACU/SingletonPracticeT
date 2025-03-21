@@ -1,21 +1,39 @@
 //***************************************************************************
 // File name:   main.cpp
 // Author:      
-// Date:        
+// Date:        3/21/2025
 // Class:       
 // Assignment:  
 // Purpose:     
 //***************************************************************************
 
 #include <iostream>
-#include <vector> 
-#include <string>
-#include <sstream>
+#include "../include/LogSingleton.h"
+
+
+//***************************************************************************
+// Function:    functionToUseSingleton
+//
+// Description: Test Singleton
+//
+// Parameters:  None
+//
+// Returned:    None
+//***************************************************************************
+int functionToUseSingleton()
+{
+	LogSingleton& rcTheSingletion = LogSingleton::Instance();
+
+
+	rcTheSingletion.write("FUNCTION: FRIDAY\n");
+	rcTheSingletion.write("FUNCTION: SpringBreak\n");
+}
+
 
 //***************************************************************************
 // Function:    main
 //
-// Description: Print hi!
+// Description: Test Singleton
 //
 // Parameters:  none
 //
@@ -23,7 +41,11 @@
 //***************************************************************************
 int main()
 {
-    std::string cMessage = "hi!";
-    std::cout << ">> " << cMessage << " << " << std::endl;  
-    return EXIT_SUCCESS;
+	LogSingleton& rcTheSingletion = LogSingleton::Instance("data/log.txt");
+
+
+	rcTheSingletion.write("FRIDAY\n");
+	rcTheSingletion.write("SpringBreak\n");
+
+	return EXIT_SUCCESS;
 }
